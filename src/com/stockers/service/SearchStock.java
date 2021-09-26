@@ -3,14 +3,15 @@ package com.stockers.service;
 public class SearchStock {
 	
 	static int binarysearch(double[]A, double x) {
-		
-		int p = 0, r = A.length;
+		MergeSort sort = new MergeSort();
+		double[] sortedA = sort.mergeSort(A);
+		int p = 0, r = sortedA.length;
 		
 		while(p<=r) {
 			int q = (p+r)/2;
-			if(A[q]==x)
+			if(sortedA[q]==x)
 				return q;
-			else if(A[q]>x)
+			else if(sortedA[q]>x)
 				r = q-1;
 			else
 				p=q+1;
